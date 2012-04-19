@@ -10,6 +10,7 @@ Options
 Example
 ---
 Once all images targeted by the `'.container img'` selector are loaded, the callback is fired.
+
 ```javascript
   $('.container img').imageready(function () {
     console.log('all images are loaded!');
