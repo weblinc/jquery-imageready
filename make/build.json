@@ -1,0 +1,8 @@
+{
+  "JAVASCRIPT" : {
+    "DIST_DIR" : "./",
+    "jquery.imageready" : [
+      "src/jquery.imageready.js"
+    ]
+  }
+}
