@@ -23,13 +23,13 @@
       }
     }
 
-    return this.each(function () {
+    return this.find( 'img' ).each(function () {
       var $this = $( this );
-      $this.is( 'img' ) && this.complete || this.readyState === 4 ?
+      this.complete || this.readyState === 4 ?
         loaded() :
         bindLoad.call( $this );
     });
-  }
+  };
 
   $.fn.imageready.defaults = {
     cachePrefix: 'random'

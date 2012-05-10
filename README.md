@@ -9,10 +9,18 @@ Options
 
 Example
 ---
-Once all images targeted by the `'.container img'` selector are loaded, the callback is fired.
+Once all images within the selector (including descendents) `'.container'` are loaded, the callback is fired.
+
+```html
+    <div class="container">
+        <img src="cutecat1.jpg" />
+        <img src="cutecat2.jpg" />
+        <img src="cutecat3.jpg" />
+    </div>
+```
 
 ```javascript
-  $('.container img').imageready(function () {
+  $('.container').imageready(function () {
     console.log('all images are loaded!');
   });
 ```
