@@ -5,7 +5,8 @@
   $.fn.imageready = function ( callback, userSettings ) {
     var
       options = $.extend( {}, $.fn.imageready.defaults, userSettings ),
-      unloadedImages  = this.length;
+      $images = this.find( 'img' ).add( this.filter( 'img' ) ),
+      unloadedImages  = $images.length;
 
     function loaded () {
       unloadedImages--;
@@ -23,7 +24,7 @@
       }
     }
 
-    return this.find( 'img' ).each(function () {
+    return $images.each(function () {
       var $this = $( this );
       this.complete || this.readyState === 4 ?
         loaded() :
