@@ -9,7 +9,7 @@ Options
 
 Example
 ---
-Once all images within the selector (including descendents) `'.container'` are loaded, the callback is fired.
+Once all images in the selector (including both descendents and elements immediately selected) `'.container'` are loaded, the callback is fired.
 
 ```html
     <div class="container">
