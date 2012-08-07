@@ -1,12 +1,12 @@
 // jquery.imageready.js
 // @weblinc, @jsantell, (c) 2012
 
-;(function($) {
+;(function( $ ) {
   $.fn.imageready = function ( callback, userSettings ) {
     var
       options = $.extend( {}, $.fn.imageready.defaults, userSettings ),
       $images = this.find( 'img' ).add( this.filter( 'img' ) ),
-      unloadedImages  = $images.length;
+      unloadedImages = $images.length;
 
     function loaded () {
       unloadedImages--;
@@ -26,6 +26,10 @@
 
     return $images.each(function () {
       var $this = $( this );
+      if ( !$this.attr( 'src' ) ) {
+        loaded();
+        return;
+      }
       this.complete || this.readyState === 4 ?
         loaded() :
         bindLoad.call( $this );
@@ -36,4 +40,4 @@
     cachePrefix: 'random'
   };
 
-})(jQuery);
+})( jQuery );

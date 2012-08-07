@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Image Ready</title>
+	</head>
+	<body>
+		<h1><a href="https://github.com/weblinc/jquery-imageready">jQuery Image Ready</a></h1>
+		<h2 class="message">Images not yet loaded</h2>
+		<div class="container">
+			<img src="cutecats1.jpg" />
+			<img src="cutecats2.jpg" />
+			<img src="cutecats3.jpg" />
+			<img />
+		</div>
+		<script src="jquery.js"></script>
+		<script src="../src/jquery.imageready.js"></script>
+		<script>
+			$(function () {
+				$(document).imageready(function () {
+					$('.message').html('Images loaded!');
+				});
+			});
+		</script>
+	</body>
+</html>
