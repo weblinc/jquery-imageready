@@ -25,10 +25,6 @@ Once all images in the selector (including both descendents and elements immedia
   });
 ```
 
-TODO
----
-* Set up working demo
-
 Contributing
 ---
 This project uses [smoosh](https://github.com/fat/smoosh) for compiling, linting.
