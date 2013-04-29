@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery imageready - WebLinc</title>
+	<link href="css/normalize.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<p class="wl-ribbon">
+	<a href="https://github.com/weblinc/jquery-imageready"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+</p>
+<div class="wl-content">
+<div class="wl-banner">
+	<div class="wl-wrapper">
+		<h1 class="title">jQuery imageready</h1>
+		<p>A jQuery plugin for a bulk image load event</p>
+	</div>
+</div>
+<div class="wl-wrapper">
+  <h2 class="wl-message">Images are loading...</h2>
+	<p class="demo">
+		<a class="zoom" href="images/large.jpg">
+			<img src="test/cutecats1.jpg" alt="Test Image" />
+		</a>
+		<a class="zoom" href="images/large.jpg">
+			<img src="test/cutecats2.jpg" alt="Test Image" />
+		</a>
+		<a class="zoom" href="images/large.jpg">
+			<img src="test/cutecats3.jpg" alt="Test Image" />
+		</a>
+	</p>
+</div>
+</div>
+<div class="wl-footer wl-cf">
+	<div class="wl-wrapper">
+		<a href="http://www.weblinc.com" class="logo"></a>
+		<div class="contact">
+			<a href="https://twitter.com/WebLinc" class="twitter-follow-button" data-show-count="false">Follow @WebLinc</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+	</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="jquery.imageready.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+      $("p.demo").imageready(function () {
+        $(".wl-message").text("Images are loaded");
+      });
+	});
+</script>
+</body>
+</html>
