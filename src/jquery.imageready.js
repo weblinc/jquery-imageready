@@ -3,10 +3,13 @@
 
 ;(function( $ ) {
   $.fn.imageready = function ( callback, userSettings ) {
-    var
-      options = $.extend( {}, $.fn.imageready.defaults, userSettings ),
-      $images = this.find( 'img' ).add( this.filter( 'img' ) ),
-      unloadedImages = $images.length;
+    var options = $.extend( {}, $.fn.imageready.defaults, userSettings ),
+        $images = this.find( 'img' ).add( this.filter( 'img' ) ),
+        unloadedImages = $images.length;
+
+    if (callback == null) {
+      callback = function() {};
+    }
 
     function loaded () {
       unloadedImages--;
@@ -14,11 +17,15 @@
     }
 
     function bindLoad () {
+      var checkIE, isIE;
+
       this.one( 'load', loaded );
-      if ( $.browser.msie ) {
-        var
-          src   = this.attr( 'src' ),
-          param = src.match( /\?/ ) ? '&' : '?';
+      isIE = (navigator.appName.indexOf("Internet Explorer")!=-1) ? true : false;
+
+      if ( isIE ) {
+        var src   = this.attr( 'src' ),
+            param = src.match( /\?/ ) ? '&' : '?';
+
         param  += options.cachePrefix + '=' + ( new Date() ).getTime();
         this.attr( 'src', src + param );
       }
